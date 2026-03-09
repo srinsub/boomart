@@ -14,6 +14,12 @@ A sales platform for Boomika's paintings, raising funds for Neural teaching stud
 
 Elegant design with Green, White, and Sea Blue colors. Logo: BoomArt
 
+## Administrator access
+
+- **Manage** (add/edit/delete paintings) and **Sales Report** require administrator login.
+- Default password: `boomart` (change it in `js/auth.js` → `ADMIN_PASSWORD`).
+- Session-based: closing the tab logs you out.
+
 ## How to Run
 
 1. Open `index.html` in a web browser, or
