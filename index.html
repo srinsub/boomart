@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoomArt - Home | Art for a Cause</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">BoomArt</a>
+            <nav class="nav">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="manage.html" class="nav-link">Manage</a>
+                <a href="report.html" class="nav-link">Sales Report</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to BoomArt</h1>
+                <p class="hero-subtitle">Where Art Meets Purpose</p>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="container">
+                <div class="about-card">
+                    <h2>About Boomika's Artwork</h2>
+                    <p class="about-intro">
+                        Boomika is a passionate high school student who invests her free time creating beautiful paintings. 
+                        Her artwork is more than just aesthetics—it's a mission to make a difference.
+                    </p>
+                    <div class="mission-box">
+                        <h3>Our Mission</h3>
+                        <p>
+                            Every painting sold helps raise funds for <strong>Neural teaching students</strong>—supporting 
+                            education and learning opportunities for those who need it most. When you purchase a piece 
+                            from BoomArt, you're not just acquiring art; you're contributing to a meaningful cause.
+                        </p>
+                    </div>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-number" id="totalPaintings">0</span>
+                            <span class="stat-label">Artworks</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="totalSales">0</span>
+                            <span class="stat-label">Paintings Sold</span>
+                        </div>
+                    </div>
+                    <a href="gallery.html" class="btn btn-primary">Explore Gallery</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 BoomArt. Art for a Cause.</p>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        // Update home page stats
+        document.addEventListener('DOMContentLoaded', function() {
+            const paintings = DataStore.getPaintings();
+            const sales = DataStore.getSales();
+            document.getElementById('totalPaintings').textContent = paintings.length;
+            document.getElementById('totalSales').textContent = sales.length;
+        });
+    </script>
+</body>
+</html>

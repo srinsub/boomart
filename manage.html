@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoomArt - Manage Paintings</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">BoomArt</a>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="manage.html" class="nav-link active">Manage</a>
+                <a href="report.html" class="nav-link">Sales Report</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="manage-section">
+            <div class="container">
+                <h1>Manage Paintings</h1>
+                <p class="section-desc">Add, edit, or remove paintings from the gallery.</p>
+
+                <div class="form-card">
+                    <h2 id="formTitle">Add New Painting</h2>
+                    <form id="paintingForm">
+                        <input type="hidden" id="paintingId">
+                        <div class="form-group">
+                            <label for="title">Title</label>
+                            <input type="text" id="title" required placeholder="Painting title">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea id="description" rows="4" required placeholder="Describe the painting..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="price">Price ($)</label>
+                            <input type="number" id="price" required min="0" step="0.01" placeholder="0.00">
+                        </div>
+                        <div class="form-group">
+                            <label>Image</label>
+                            <div class="image-upload-area">
+                                <div class="image-preview" id="imagePreview">
+                                    <img id="imagePreviewImg" src="" alt="Preview" style="display:none;">
+                                    <span id="imagePreviewPlaceholder">No image selected</span>
+                                </div>
+                                <div class="image-sources">
+                                    <label class="file-label">
+                                        <span class="btn btn-outline">Choose from computer</span>
+                                        <input type="file" id="imageFile" accept="image/*" style="display:none;">
+                                    </label>
+                                    <span class="or">or</span>
+                                    <input type="text" id="imageUrl" placeholder="Paste image URL (optional)">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" id="submitBtn">Add Painting</button>
+                            <button type="button" class="btn btn-outline" id="cancelBtn" style="display:none;">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="paintings-list">
+                    <h2>Existing Paintings</h2>
+                    <div class="paintings-grid" id="manageGrid">
+                        <!-- Loaded by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 BoomArt. Art for a Cause.</p>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/manage.js"></script>
+</body>
+</html>
